@@ -114,7 +114,7 @@ EOF
 ### install podman
 apt-get install software-properties-common -y
 add-apt-repository -y ppa:projectatomic/ppa
-sudo apt-get -qq -y install podman containers-common
+sudo apt-get -qq -y install podman containers-common kubelet=${KUBE_VERSION}-00 kubeadm=${KUBE_VERSION}-00 kubectl=${KUBE_VERSION}-00
 cat <<EOF | sudo tee /etc/containers/registries.conf
 [registries.search]
 registries = ['docker.io']
