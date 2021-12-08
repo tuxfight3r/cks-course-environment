@@ -23,6 +23,11 @@ ksns ()
     kubectl config set-context $(kubectl config current-context) --namespace=${1-default}
 }
 
+kgns ()
+{
+    echo "Current Namespace: $(kubectl get sa default -o jsonpath='{.metadata.namespace}')"
+}
+
 EOF
 
 
